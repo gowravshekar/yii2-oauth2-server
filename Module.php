@@ -80,6 +80,11 @@ class Module extends \yii\base\Module implements \yii\base\BootstrapInterface
     public $allowImplicit;
     
     /**
+     * @var bool use_jwt_access_tokens
+     */
+     public $useJwtAccessTokens;
+    
+    /**
      * @inheritdoc
      */
     public function bootstrap($app)
@@ -138,7 +143,8 @@ class Module extends \yii\base\Module implements \yii\base\BootstrapInterface
                     'access_lifetime' => $this->tokenAccessLifetime,
                     'refresh_token_lifetime' => $this->tokenRefreshLifetime,
                     'enforce_state' => $this->enforceState,
-                    'allow_implicit' => $this->allowImplicit
+                    'allow_implicit' => $this->allowImplicit,
+                    'use_jwt_access_tokens' => $this->useJwtAccessTokens
                     /** add more ... */
                 ],
                 $grantTypes,
